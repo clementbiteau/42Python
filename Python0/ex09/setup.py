@@ -1,5 +1,6 @@
 from setuptools import setup, find_packages
 
+"""Quick set up for a package to unzip when load has started"""
 setup(
     name="ft_package",
     version="0.0.1",
