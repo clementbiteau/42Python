@@ -6,7 +6,7 @@ setup(
     description="A sample test package",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/clementbiteau/42Python/day00/ex09",
+    url="https://github.com/clementbiteau/42Python/Python0/ex09",
     author="Clément Biteau",
     author_email="cbiteau@42.fr",
     license="MIT",
