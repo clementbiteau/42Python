@@ -13,6 +13,9 @@ NESTED_MORSE = {
     }
 
 def main():
+    """Simple program that takes a string as input and prints the morse code version of it.
+    Note: the dictionnary of Nested Morse does not include special characters. If any are viewed by the main(),
+    it will be immediately discarded as an Assertion Error"""
     if len(sys.argv) != 2:
         raise AssertionError("not able to evaluate input")
     res = sys.argv[1].upper()
