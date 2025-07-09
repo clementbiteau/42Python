@@ -21,17 +21,24 @@ def count_str(s: str):
 def main():
     """This function attempts to do 3 steps
     1) Length of input must be 1 string (no more no less = AssertionError)
+        - Python3 > building.py > string --> string as None or nothing will request user to enter a string to count
     2) Counts the length of the string
     3) Print -> number of (Upper Case chars) + (Lower Case chars ) + (Punctuation marks) + (Spaces) + (Digits)
     """
-    if len(sys.argv) > 2:
-        raise AssertionError("Too many Arguments: Only One String is Expected.")
-    if len(sys.argv) == 2:
-        res = sys.argv[1]
-    else:
-        print("What is the text to count?")
-        res = input()
-    count_str(res)
+    try:
+        if len(sys.argv) > 2:
+            raise AssertionError("Too many Arguments: Only One String is Expected.")
+        if len(sys.argv) == 2 and sys.argv[1] != "None":
+            res = sys.argv[1]
+        else:
+            print("What is the text to count?")
+            res = input()
+            while res == "None" or len(res) < 1:
+                print("Come on we need a text to count...")
+                res = input()
+        count_str(res)
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
 
 if __name__ == "__main__":
     main()
