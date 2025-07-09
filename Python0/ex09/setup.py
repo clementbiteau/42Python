@@ -13,7 +13,7 @@ setup(
     license="MIT",
     packages=find_packages(),
     classifiers=[
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: MIT ",
         "Programming Language :: Python :: 3",
     ],
     python_requires=">=3.6",
