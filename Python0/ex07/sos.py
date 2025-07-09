@@ -16,14 +16,17 @@ def main():
     """Simple program that takes a string as input and prints the morse code version of it.
     Note: the dictionnary of Nested Morse does not include special characters. If any are viewed by the main(),
     it will be immediately discarded as an Assertion Error"""
-    if len(sys.argv) != 2:
-        raise AssertionError("not able to evaluate input")
-    res = sys.argv[1].upper()
-    if not all(char in NESTED_MORSE for char in res):
-        raise AssertionError("the arguments are bad")
+    try:
+        if len(sys.argv) != 2:
+            raise AssertionError("not able to evaluate input")
+        res = sys.argv[1].upper()
+        if not all(char in NESTED_MORSE for char in res):
+            raise AssertionError("the arguments are bad")
 
-    res = (' '.join(NESTED_MORSE[char] for char in res.upper()))
-    print(res)
+        res = (' '.join(NESTED_MORSE[char] for char in res.upper()))
+        print(res)
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
 
 if __name__ == "__main__":
     main()
