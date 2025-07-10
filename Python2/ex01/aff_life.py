@@ -13,7 +13,7 @@ def aff_life(file: str):
         french_data = french_data.T
         french_data.columns = ['life_expectancy']
         french_data.index.name = 'year'
-        #french_data.to_csv('./french_data')
+        #french_data.to_csv('./french_data.csv')
         french_data.reset_index(inplace=True)
         french_data['year'] = french_data['year'].astype(int)
         
@@ -22,8 +22,7 @@ def aff_life(file: str):
         plt.xlabel("Year", )
         plt.ylabel("Life expectancy")
         #plt.grid(True)
-        plt.xticks(
-        ticks=range(french_data['year'].min(), french_data['year'].max() + 1, 40))
+        plt.xticks(ticks=range(french_data['year'].min(), french_data['year'].max() + 1, 40))
         plt.savefig("Life_Expectancy_France.png")
         plt.close()
         
